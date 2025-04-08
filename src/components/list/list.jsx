@@ -4,8 +4,8 @@ import UserInfo from "./userInfo/userInfo"
 const List = () => {
     return (
         <div className='list'>
-            <ChatList/>
             <UserInfo/>
+            <ChatList/>
         </div>
     )
 }
