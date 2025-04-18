@@ -1,6 +1,7 @@
 import Chat from "./components/chat/Chat";
 import List from "./components/list/List";
 import Detail from "./components/detail/Detail";
+//npm run dev
 const App = () => {
   return (
     <div className='container'>
