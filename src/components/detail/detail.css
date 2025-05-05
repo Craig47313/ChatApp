@@ -1,3 +1,116 @@
 .detail{
     flex: 1;
-}
+
+    .user{
+        display: flex;
+        padding: 30px 20px;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        border-bottom: 1px solid #dddddd35;
+        img{
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .texts{
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            span{
+                font-weight: bold;
+                font-size: 18px;
+            }
+            p{
+                font-size: 14px;
+                font-weight: 300;
+                color: #a5a5a5;
+            }
+        }
+    }
+    .info{
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        .option{
+            
+            .title{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                img{
+                    width: 30px;
+                    height: 30px;
+                    background-color: #0c292c8b;
+                    padding: 10px;
+                    border-radius: 50%;
+                    cursor: pointer;
+                }
+            }
+            .photos{
+                margin-top: 20px;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                .photoItem{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    .photoDetail{
+                        
+                        img{
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 5px;
+                            object-fit: cover;
+                        }
+
+                        span{
+                            
+                            font-size: 14px;
+                            color: lightslategrey;
+                            font-weight: 300;
+                        }
+                    }
+
+                    .icon{
+                        width: 30px;
+                        height: 30px;
+                        background-color: #0c292c8b;
+                        padding: 10px;
+                        border-radius: 40%;
+                        cursor: pointer;
+                    }
+
+                }
+            }
+        }
+        .buttons{
+            
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            button{
+                padding: 15px 20px;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+
+                &.block{
+                    background-color: #aa3440;
+                    &:hover{
+                        background-color: #e32e28dd;
+                    }
+                }
+                    
+                &.logout{
+                    background-color: #37a9da;
+
+                }
+            }
+        }
+    }
+} 
