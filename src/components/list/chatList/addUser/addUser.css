@@ -1,0 +1,67 @@
+.AddUser{
+    width: max-content;
+    height: max-content;
+    padding: 30px;
+    background-color: #0c292c8b;
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+
+    form{
+        display: flex;
+        gap: 20px;
+
+        input{
+            padding: 15px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+        }
+        button{
+            padding: 15px;
+            border-radius: 5px;
+            background-color: #4774ab;
+            border: none;
+            color: white;
+            cursor: pointer;
+
+        }
+    }
+
+    .user{
+        padding-top: 10px;
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        .detail{
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            img{
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+            }
+
+            span{
+                padding: 15px;
+                background-color: #0c292c;
+                color: white;
+                font-weight: 550;
+                border-radius: 5px;
+            }
+        }
+        button{
+            padding: 15px;
+            border-radius: 5px;
+            background-color: #4774ab;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+    }
+}

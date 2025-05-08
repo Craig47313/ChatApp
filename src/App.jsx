@@ -5,7 +5,7 @@ import Detail from "./components/detail/Detail";
 //npm run dev
 const App = () => {
 
-  const user = false;
+  const user = true;
 
   return (
     <div className='container'>
@@ -18,7 +18,7 @@ const App = () => {
       ) : (
         <Login/>
       )}
-      
+      <notification/>
     </div>
   )
 }
