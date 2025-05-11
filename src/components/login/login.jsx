@@ -1,7 +1,9 @@
 import { useState } from "react"
 import "./login.css"
 import { toast, ToastContainer } from "react-toastify"
-
+import { createUserWithEmailAndPassword } from "firebase/auth"
+import { auth, db } from "../lib/firebase"
+import { doc, setDoc } from "firebase/firestore"
 const Login = () => {
     const [avatar,setAvatar] = useState({
         file: null,
@@ -19,7 +21,41 @@ const Login = () => {
 
     const handleLogin = e =>{
         e.preventDefault()
-        toast.warn("Hello")
+        toast.warn("Login")
+    }
+    const handleRegister = async (e) =>{
+        e.preventDefault();
+        toast.warn("Registering");
+
+        const formData = new FormData(e.target);
+
+        const {username, email, password} = Object.fromEntries(formData);
+
+        try {
+            if (!email || !password || password.length < 6) {
+                toast.error("Please enter a valid email and a password with at least 6 characters.");
+                return;
+            }
+
+            const res = await createUserWithEmailAndPassword(auth, email, password);
+            
+            await setDoc(doc(db, "users", res.user.uid), {
+                username,
+                email, 
+                id: res.user.uid,
+                blocked: []
+            });
+
+            await setDoc(doc(db, "userChats", res.user.uid), {
+                chats: []
+            });
+            
+            toast.success("account created")
+
+        } catch (err) {
+            console.log(err);
+            toast.error(err.message);
+        }
     }
     return (
         <div className='login'>
@@ -34,8 +70,8 @@ const Login = () => {
             </div>
             <div className="separator"></div>
             <div className="item">
-                <form>
-                    <h2>Create an Account</h2>
+                <h2>Create an Account</h2>
+                <form onSubmit={handleRegister}>
                     <label htmlFor="file">
                         <img src={avatar.url || "./avatar.png"}alt="" />
                         <p>Upload an Image</p>
