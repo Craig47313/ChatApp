@@ -59,6 +59,10 @@
                 background-color: #4774ab;
                 color: white;
                 border-radius: 5px;
+                &:disabled{
+                    cursor: not-allowed;
+                    background-color: #4774ab74;
+                }
             }
             
         }
