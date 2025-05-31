@@ -53,8 +53,8 @@ const Detail = () => {
                     </div>
                 </div> 
                 <div className="buttons">
-                    <button className="block" onClick={()=> auth.signOut()}>Block User</button>
-                    <button className="logout">LogOut</button>
+                    <button className="block">Block User</button>
+                    <button className="logout" onClick={()=> auth.signOut()}>LogOut</button>
                 </div>
             </div>
         </div>
